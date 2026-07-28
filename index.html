@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="cordefundo">
+
+    <button id="somar">somar</button>
+    <button id="subtrair">subtrair</button>
+    <p id="numero">0</p>
+</body>
+
+<script>
+ const somar = document.getElementById("somar")
+ const subtrair = document.getElementById("subtrair")
+ let numero = document.getElementById("numero")
+ let trocarCor = document.getElementById("cordefundo")
+ let contador =0
+
+
+ function trocarFundo(){
+    if(contador >=5){
+        document.body.style.backgroundColor="blue"
+    }
+    else if (contador >= 3) {
+           document.body.style.backgroundColor="red" 
+    }
+    else{
+            document.body.style.backgroundColor="pink"   
+    
+ }}
+ trocarFundo()
+
+ somar.addEventListener("click",()=>{
+    contador++
+    numero.innerHTML=contador
+    trocarFundo()
+
+ })
+
+ subtrair.addEventListener("click",()=>{
+    contador--
+     if(contador<=0){
+    contador=0
+    }
+    numero.innerHTML=contador
+    trocarFundo()
+ })
+
+ 
+</script>
+
+</html>
