@@ -5,8 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body id="cordefundo">
 
+<style>
+    body{
+        
+        background-color: aquamarine;
+                display: flex;
+                justify-content: space-around;
+
+    }
+    .minha-caixa{
+        width: 300px;
+        background-color: aliceblue;
+        display: flex;
+                justify-content: space-around;
+                flex-direction: column;
+                text-align: center;
+                border-radius: 50px 0 50px 0;
+                
+    }.minha-caixa:hover{
+        width: 400px;
+        transition: all 2s;
+    }
+    button{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        background-color: tomato;
+        color: white;
+        margin-left: 5%;
+        margin-right:  5%;
+        margin-top: 5px;
+        border-radius: 15px;
+        
+    }button:hover{
+        margin-left: 15%;
+        margin-right:  15%;
+        transition: all 100ms;
+    }
+</style>
+
+
+<body id="cordefundo">
+    <div class="minha-caixa">
     <button id="somar">somar</button>
     <button id="subtrair">subtrair</button>
     <p id="numero">0</p>
@@ -16,6 +57,7 @@
     <button id="botaoNome">adionar Nome: </button>
 
     <p id="resultado"></p>
+</div>
 </body>
 
 <script>
