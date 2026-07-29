@@ -10,46 +10,52 @@
     <button id="somar">somar</button>
     <button id="subtrair">subtrair</button>
     <p id="numero">0</p>
+
+    <label for="nome">nome:</label>
+    <input type="text" id="nome" placeholder="seu nome">
+    <button id="botaoNome">adionar Nome: </button>
+
+    <p id="resultado"></p>
 </body>
 
 <script>
- const somar = document.getElementById("somar")
- const subtrair = document.getElementById("subtrair")
- let numero = document.getElementById("numero")
- let trocarCor = document.getElementById("cordefundo")
- let contador =0
+        const nome = document.getElementById("nome")
+        const botaoNome = document.getElementById("botaoNome")
+        const resultado = document.getElementById("resultado")
+        const guardarnome =[]
+        botaoNome.addEventListener("click",()=>{
+            const resultnomneDapessia = nome.value
+            guardarnome.push(resultnomneDapessia)
+            resultado.innerHTML=guardarnome
+        })
 
+        const somar = document.getElementById("somar")
+        const subtrair = document.getElementById("subtrair")
 
- function trocarFundo(){
-    if(contador >=5){
-        document.body.style.backgroundColor="blue"
-    }
-    else if (contador >= 3) {
-           document.body.style.backgroundColor="red" 
-    }
-    else{
-            document.body.style.backgroundColor="pink"   
-    
- }}
- trocarFundo()
+        let contador = 0
+        let numero = document.getElementById("numero")
 
- somar.addEventListener("click",()=>{
-    contador++
-    numero.innerHTML=contador
-    trocarFundo()
+        function ChamarCor(eventoaqui){
+            document.body.style.backgroundColor=eventoaqui
+        }
 
- })
+        function MudarFundo(){
+            if(contador >= 10){
+                ChamarCor("blue")
+            }else if(contador >= 5){
+                 ChamarCor("red")
+            }else{
+                 ChamarCor("yellow")
+            }
+        }
 
- subtrair.addEventListener("click",()=>{
-    contador--
-     if(contador<=0){
-    contador=0
-    }
-    numero.innerHTML=contador
-    trocarFundo()
- })
+        somar.addEventListener("click",()=>{
+            contador++
+            numero.innerHTML=contador
+            MudarFundo()
+})
 
- 
+        
 </script>
 
 </html>
